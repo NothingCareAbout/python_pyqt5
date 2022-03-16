@@ -1,13 +1,25 @@
-import numpy as np
-import random
+import pandas as pd
+from  matplotlib import pyplot as plt
+#plt.rcParams["font.sans-serif"]=["SimHei"] #设置字体
+#plt.rcParams["axes.unicode_minus"]=False #该语句解决图像中的“-”负号的乱码问题
 
-arr=np.array(range(1,6)) #创建一个数组
-arr1=np.arange(1,6) #等价于arr
-#print(type(arr))  <class 'numpy.ndarray'>
-print(arr1.dtype) #数据类型
+fig=plt.figure("hahh",figsize=(80,40),dpi=60) #figure 图表
 
-arr2=np.array([10*random.random() for i in range(10)])
-arr3=np.round(arr2,2) #四舍五入保留2位小数 round(array,n)
-print(arr2)
-print(arr3)  
+plt.xlabel("时间",fontsize="20",color="blue")  #xlabel x轴标签
+plt.ylabel("温度",fontsize="20")
 
+x=range(2,26,2)
+y=[17,26,25,30,15,48,23,48,15,35,26,24]
+x_tick=[]
+for i in range(2,49,2):
+    x_tick.append(i/2)
+
+plt.xticks(x_tick) #x轴的刻度大小 要和x个数一一对应
+
+plt.plot(x,y)
+
+plt.title("气温变化图",fontsize="30")
+
+#plt.savefig("firstfig.png")
+
+plt.show()
