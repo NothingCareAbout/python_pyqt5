@@ -31,7 +31,7 @@ class Example(QMainWindow):
         exitAct.setStatusTip('Exit application')
         exitAct.triggered.connect(QApplication.instance().quit)
         #再来一个状态栏
-        openfileAct = QAction(QIcon('exit.png'), '&OpenFile', self)
+        openfileAct = QAction(QIcon('exit.png'), '&OpenFile', self)#添加Action
         openfileAct.setShortcut('Ctrl+O')
         openfileAct.setStatusTip('OpenFile')
         openfileAct.triggered.connect(self.openFile)
